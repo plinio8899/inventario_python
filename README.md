@@ -1,37 +1,48 @@
-inventario = []
+# Simple Inventory Manager
 
-def agregar():
-    try:
-        nombre = input("Nombre del producto -> ")
-        precio = int(input("Precio del producto -> "))
-        cantidad = int(input("Cantidad del producto -> "))
-        inventario.append({
-            "Nombre" : nombre,
-            "Precio" : precio,
-            "Cantidad" : cantidad
-        })
-    except:
-        print("Ha ocurrido un error al agregar el producto")
+A lightweight, console-based inventory management system built with **Python**. This project demonstrates modular programming by separating the user interface logic from the core business logic.
 
-def mostrar():
-    if len(inventario) == 0:
-        print("El inventario esta vacio")
-    else:
-        for item in inventario:
-            print(item)
+## 🚀 Features
 
-def estadisticas():
-    if len(inventario) == 0:
-        print("El inventario esta vacio")
-    else:
-        precio_total = 0
-        cantidad_total = 0
-        for item in inventario:
-            precio_total += item["Precio"] * item["Cantidad"]
-            cantidad_total += item["Cantidad"]
-        print(f"El valor total del inventario es de {precio_total}")
-        print(f"La cantidad total de articulos en inventario es de {cantidad_total}")
+* **Product Management:** Easily add products with specific names, prices, and quantities.
+* **Data Validation:** Includes basic error handling to ensure price and quantity inputs are numeric.
+* **Inventory Overview:** Display a complete list of all registered items.
+* **Real-time Statistics:** * Calculates the **total monetary value** of the entire stock.
+    * Summarizes the **total count of units** available.
 
-        
+## 📂 Project Structure
 
+The project is divided into two main files:
 
+* `main.py`: The entry point of the application. It handles the execution loop and the interactive menu.
+* `core.py`: The logic engine. It manages the data structures (lists and dictionaries) and performs all calculations.
+
+## 🛠️ Requirements
+
+* **Python 3.x** or higher.
+
+## 💻 How to Run
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/your-username/inventory-manager-python.git](https://github.com/your-username/inventory-manager-python.git)
+    cd inventory-manager-python
+    ```
+
+2.  **Run the application:**
+    ```bash
+    python main.py
+    ```
+
+## 📖 Usage Example
+
+Once the script is running, follow the on-screen prompts:
+
+```text
+--------Menu--------
+1. Add product
+2. Show products
+3. Calculate statistics
+4. Exit
+--------------------
+Option ->
